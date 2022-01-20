@@ -39,12 +39,12 @@ export class FolderPage implements OnInit {
     return await modal.present();
   }
 
-  async showSheetModal() {
+  async showSheetModal(initialBreakpoint = 0.5) {
     const modal = await this.modalController.create({
       component: ModalPage,
       cssClass: 'my-custom-class',
-      initialBreakpoint: 0.5,
-      breakpoints: [0, 0.5, 1],
+      initialBreakpoint,
+      breakpoints: [0, initialBreakpoint, 1],
     });
     return await modal.present();
   }
