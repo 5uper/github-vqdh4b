@@ -7,15 +7,57 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-text-center">
+<ion-content [fullscreen]="true" class="ion-text-center ion-padding">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">{{ folder }}</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <ion-button (click)="showModal()">Show Modal</ion-button><br />
-  <ion-button (click)="showCardModal()">Show Popover Modal</ion-button><br />
-  <ion-button (click)="showSheetModal()">Show Sheet Modal</ion-button><br />
-  <ion-button (click)="showSheetModal(0.25)">Show Sheet Modal 0.25</ion-button>
+  <ng-container [ngSwitch]="folder">
+    <ng-container *ngSwitchCase="'Modal'">
+      <ion-button (click)="showModal()" shape="round">Show Modal</ion-button
+      ><br />
+      <ion-button (click)="showCardModal()" shape="round"
+        >Show Popover Modal</ion-button
+      ><br />
+      <ion-button (click)="showSheetModal()" shape="round"
+        >Show Sheet Modal</ion-button
+      ><br />
+      <ion-button (click)="showSheetModal(0.25)" shape="round"
+        >Show Sheet Modal 0.25</ion-button
+      >
+    </ng-container>
+    <ng-container *ngSwitchCase="'Input'">
+      <ion-list class="ion-padding-top" [inset]="false">
+        <ion-item fill="outline" shape="round" mode="md">
+          <ion-label position="floating">
+            Outline Floating Label Round
+          </ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+        <ion-item fill="solid" shape="round" mode="md" class="ion-margin-top">
+          <ion-label position="floating">
+            Filled Floating Label Round
+          </ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+        <ion-item fill="outline" mode="md" class="ion-margin-top">
+          <ion-label position="floating"> Outline Floating Label </ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+        <ion-item fill="solid" mode="md" class="ion-margin-top">
+          <ion-label position="floating"> Filled Floating Label </ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+        <ion-item class="ion-margin-top">
+          <ion-label position="floating"> Default Floating Label iOS </ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+        <ion-item class="ion-margin-top" mode="md">
+          <ion-label position="floating"> Default Floating Label Android </ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+      </ion-list>
+    </ng-container>
+  </ng-container>
 </ion-content>
