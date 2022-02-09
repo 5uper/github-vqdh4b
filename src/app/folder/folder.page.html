@@ -14,6 +14,7 @@
     </ion-toolbar>
   </ion-header>
   <ng-container [ngSwitch]="folder">
+    <!-- Modal -->
     <ng-container *ngSwitchCase="'Modal'">
       <ion-button (click)="showModal()" shape="round">Show Modal</ion-button
       ><br />
@@ -27,37 +28,49 @@
         >Show Sheet Modal 0.25</ion-button
       >
     </ng-container>
+    <!-- Input Fields -->
     <ng-container *ngSwitchCase="'Input'">
-      <ion-list class="ion-padding-top" [inset]="false">
-        <ion-item fill="outline" shape="round" mode="md">
-          <ion-label position="floating">
-            Outline Floating Label Round
-          </ion-label>
-          <ion-input></ion-input>
-        </ion-item>
-        <ion-item fill="solid" shape="round" mode="md" class="ion-margin-top">
-          <ion-label position="floating">
-            Filled Floating Label Round
-          </ion-label>
-          <ion-input></ion-input>
-        </ion-item>
-        <ion-item fill="outline" mode="md" class="ion-margin-top">
-          <ion-label position="floating"> Outline Floating Label </ion-label>
-          <ion-input></ion-input>
-        </ion-item>
-        <ion-item fill="solid" mode="md" class="ion-margin-top">
-          <ion-label position="floating"> Filled Floating Label </ion-label>
-          <ion-input></ion-input>
-        </ion-item>
-        <ion-item class="ion-margin-top">
-          <ion-label position="floating"> Default Floating Label iOS </ion-label>
-          <ion-input></ion-input>
-        </ion-item>
-        <ion-item class="ion-margin-top" mode="md">
-          <ion-label position="floating"> Default Floating Label Android </ion-label>
-          <ion-input></ion-input>
-        </ion-item>
-      </ion-list>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12" size-md="4">
+          <ion-list class="ion-padding-top" [inset]="false">
+          <ion-item fill="outline" shape="round" mode="md">
+            <ion-label position="floating">
+              Outline Floating Label Round
+            </ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+          <ion-item fill="solid" shape="round" mode="md" class="ion-margin-top">
+            <ion-label position="floating">
+              Filled Floating Label Round
+            </ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+          <ion-item fill="outline" mode="md" class="ion-margin-top">
+            <ion-label position="floating"> Outline Floating Label </ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+          <ion-item fill="solid" mode="md" class="ion-margin-top">
+            <ion-label position="floating"> Filled Floating Label </ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+          <ion-item class="ion-margin-top">
+            <ion-label position="floating">
+              Default Floating Label iOS
+            </ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+          <ion-item class="ion-margin-top" mode="md">
+            <ion-label position="floating">
+              Default Floating Label Android
+            </ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+        </ion-list>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      
     </ng-container>
   </ng-container>
 </ion-content>
